@@ -1,4 +1,4 @@
-const apiUrl = `http://localhost:3030`
+const apiUrl = `http://localhost:4040`
 
 const request = async (path, opts = {}) => {
   const res = await fetch(`${apiUrl}${path}`, opts)

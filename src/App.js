@@ -15,6 +15,7 @@ export default function App() {
 
   useEffect(async () => {
     const data = await client.get('/contacts')
+    console.log(data)
     setContacts(data.contacts)
     setIsLoading(false)
   }, [])

@@ -14,6 +14,7 @@ function Meetings() {
 
   useEffect(async () => {
     const data = await client.get(`/contacts/${id}/meetings`)
+    console.log('meetings',data)
     setMeetings(data.meetings)
   }, [])
 
@@ -32,7 +33,8 @@ function Meetings() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(meetingData)
     }
-    const data = await client.get(`/contacts/${id}/meetings`, opts)
+    const data = await client.post(`/contacts/${id}/meetings`, opts)
+    console.log('data',data)
     setMeetings([...meetings, data.meeting])
   }
 
